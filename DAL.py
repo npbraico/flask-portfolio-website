@@ -78,7 +78,7 @@ def getAllProjects():
 
 def addProject(title, description, imageFileName):
     try:
-        conn = sqlite3.connect("projects.db")
+        conn = sqlite3.connect(DB_NAME)
 
         sql = 'INSERT INTO projects (title, description, ImageFileName) VALUES (?,?,?)'
 
@@ -98,7 +98,7 @@ def addProject(title, description, imageFileName):
 
 def deleteProject(project_id):
     try:
-        conn = sqlite3.connect("projects.db")
+        conn = sqlite3.connect(DB_NAME)
 
         sql = 'DELETE FROM projects WHERE id = ?'
 
