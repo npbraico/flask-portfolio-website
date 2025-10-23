@@ -1,0 +1,16 @@
+# Exclude Node sample app so we only dockerize the Flask site
+getting-started-app/
+
+# Python cache and venv
+__pycache__/
+*.pyc
+.venv/
+
+# Git and OS junk
+.git/
+.gitignore
+.DS_Store
+*.log
+
+# Optional: keep local DB out of image (DAL.ensure_db creates it)
+projects.db

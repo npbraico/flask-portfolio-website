@@ -1,0 +1,175 @@
+/*
+Copied into CSS/ so the app can serve the stylesheet at /CSS/styles.css
+*/
+
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f8fb;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #1565c0;
+    color: #fff;
+    padding: 30px 0 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(21,101,192,0.08);
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background: #1976d2;
+    color: #e3f2fd;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(21,101,192,0.07);
+}
+
+section {
+    margin-bottom: 36px;
+}
+
+h2 {
+    color: #1565c0;
+    margin-top: 0;
+    font-size: 2rem;
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 6px;
+}
+
+h3 {
+    color: #1976d2;
+    margin-bottom: 6px;
+}
+
+img {
+    display: block;
+    margin: 18px auto 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(21,101,192,0.10);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Buttons and links */
+a.button, button {
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+a.button:hover, button:hover {
+    background: #1976d2;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    main {
+        padding: 16px 6px;
+    }
+    nav ul {
+        gap: 10px;
+        flex-direction: column;
+    }
+}
+
+/* ---- Forms ---- */
+.form {
+    max-width: 620px;
+    margin: 0 auto 24px auto; /* center the form within main */
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column; /* stack label above input */
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.form label {
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+.form input[type="text"],
+.form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    font-size: 1rem;
+    background: #fafcff;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.form small {
+    color: #607d8b;
+}
+
+/* ---- Tables ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    background: #f7fbff;
+}
+
+th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e3f2fd;
+    vertical-align: top;
+}
+
+td img {
+    max-width: 180px;
+    height: auto;
+}

@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projects</title>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+	<header>
+		<h1>Projects</h1>
+		<nav>
+			<ul>
+				   <li><a href="about">About Me</a></li>
+				   <li><a href="resume">Resume</a></li>
+				   <li><a href="projects">Projects</a></li>
+				   <li><a href="contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Add New Project</h2>
+			<form id="projectForm" class="form" method="post" action="/add_project">
+				<div class="form-row">
+					<label for="title">Project Title*</label>
+					<input type="text" id="title" name="title" required>
+				</div>
+				<div class="form-row">
+					<label for="description">Project Description*</label>
+					<textarea id="description" name="description" rows="4" required></textarea>
+				</div>
+				<div class="form-row">
+					<label for="image_filename">Image Filename*</label>
+					<input type="text" id="image_filename" name="image_filename" required placeholder="e.g., project1.png">
+					<small>Enter the filename of an image in your static/images folder</small>
+				</div>
+				<button type="submit">Add Project</button>
+			</form>
+		</section>
+
+		<section>
+			<h2>All Projects</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Image</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for project in projects %}
+					<tr>
+						<td>{{ project.Title }}</td>
+						<td>{{ project.Description }}</td>
+						<td><img src="/static/images/{{ project.ImageFileName }}" alt="{{ project.Title }}" style="max-width:300px; height:auto;"></td>
+						<td>
+							<form method="post" action="/delete_project/{{ project.id }}" style="display:inline;">
+								<button type="submit" onclick="return confirm('Are you sure you want to delete this project?');">Delete</button>
+							</form>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</section>
+	</main>
+</body>
+</html>
